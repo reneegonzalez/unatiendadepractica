@@ -80,7 +80,7 @@
       "type": "section-test",
       "settings": {
         "title": "HOLA MUNDO",
-        "txt-align": "right",
+        "txt-align": "center",
         "color": "#7c6363"
       }
     }
