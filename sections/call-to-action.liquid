@@ -1,0 +1,20 @@
+  <section class="summer">
+        <h1 class="title-summer">{{ section.settings.title }}</h1>
+  </section>
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Call to Action"
+      }
+    ]
+  }
+{% endschema %}
