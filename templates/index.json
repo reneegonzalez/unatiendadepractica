@@ -79,7 +79,9 @@
     "section_test_AMUFJM": {
       "type": "section-test",
       "settings": {
-        "title": "hola mundo"
+        "title": "HOLA MUNDO",
+        "txt-align": "right",
+        "color": "#7c6363"
       }
     }
   },
