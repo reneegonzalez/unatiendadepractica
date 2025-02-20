@@ -1,3 +1,4 @@
+
 .test .txt-transform-uppercase {
     text-transform: uppercase;
     font-weight: 900;
@@ -11,4 +12,19 @@
 
 .test .underline{
     text-decoration: underline;
+}
+
+.test .content_image_block{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.test .content_image_block .img-test{
+    min-height: 100%;
+    max-height: 100%;
+
 }
