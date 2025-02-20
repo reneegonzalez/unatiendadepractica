@@ -20,7 +20,7 @@
     align-items: center;
     height: 300px;
     grid-auto-flow: row;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
 }
 
 .test .content_image_block .img-test{
