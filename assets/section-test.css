@@ -8,3 +8,7 @@
 .test .txt-transform-lowercase {
     text-transform: lowercase;
 }
+
+.test .underline{
+    text-decoration: underline;
+}

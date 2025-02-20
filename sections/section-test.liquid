@@ -1,7 +1,8 @@
 {{ 'section-test.css' |  asset_url | stylesheet_tag }}
 
 <section class="test">
-    <h1 class="title {{ section.settings.txt-transform }}" style="text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
+    <h1 class="title {{ section.settings.txt-transform }} {% if section.settings.underline %} underline {% else %} none {% endif %}" style=" 
+    text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
     {% for block in section.blocks %}
         {% if  block.settings.img_test != blank %}
             <img src="{{ block.settings.img_test | image_url }}" alt="img" class="img-test">
