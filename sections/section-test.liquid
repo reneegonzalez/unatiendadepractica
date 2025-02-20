@@ -1,5 +1,7 @@
+{{ 'section-test.css' |  asset_url | stylesheet_tag }}
+
 <section class="test">
-    <h1 class="title" style="text-transform: {{ section.settings.txt-transform }};text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
+    <h1 class="title {{ section.settings.txt-transform }}" style="text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
 </section>
 
 {% schema %}
@@ -58,15 +60,15 @@
                 "label": "Transform Text",
                 "options": [
                     {
-                        "value": "uppercase",
+                        "value": "txt-transform-uppercase",
                         "label": "Uppercase"
                     },
                     {
-                        "value": "capitalize",
+                        "value": "txt-transform-capitalize",
                         "label": "Capitalize"
                     },
                     {
-                        "value": "lowercase",
+                        "value": "txt-transform-lowercase",
                         "label": "Lowercase"
                     }
                     

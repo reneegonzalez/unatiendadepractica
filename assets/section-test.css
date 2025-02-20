@@ -1,0 +1,9 @@
+.test .txt-transform-uppercase {
+    text-transform: uppercase;
+}
+.test .txt-transform-capitalize {
+    text-transform: capitalize;
+}
+.test .txt-transform-lowercase {
+    text-transform: lowercase;
+}
