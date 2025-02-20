@@ -2,7 +2,12 @@
 
 <section class="test">
     <h1 class="title {{ section.settings.txt-transform }}" style="text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
-</section>
+    {% for block in section.blocks %}
+        {% if  block.settings.img_test != blank%}
+            <img src="{{ block.settings.img_test | image_url }}" alt="img" class="img-test">
+        {% endif %}
+    {% endfor %}
+    </section>
 
 {% schema %}
 {
@@ -72,6 +77,20 @@
                         "label": "Lowercase"
                     }
                     
+                ]
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Images",
+                "type": "image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "img_test",
+                        "label": "Image",
+                        "default": "https://cdn.shopify.com/s/files/1/0656/2643/9842/files/image_1.jpg?v=1740045681"
+                    }
                 ]
             }
         ],
