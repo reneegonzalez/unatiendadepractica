@@ -84,7 +84,7 @@
         "color": "#7c6363",
         "font-size": 50,
         "underline": true,
-        "txt-transform": "uppercase"
+        "txt-transform": "txt-transform-uppercase"
       }
     }
   },
