@@ -79,11 +79,12 @@
     "section_test_AMUFJM": {
       "type": "section-test",
       "settings": {
-        "title": "HOLA MUNDO",
+        "title": "Hola mundo",
         "txt-align": "center",
         "color": "#7c6363",
         "font-size": 50,
-        "underline": true
+        "underline": true,
+        "txt-transform": "lowercase"
       }
     }
   },
