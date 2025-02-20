@@ -78,6 +78,31 @@
     },
     "section_test_AMUFJM": {
       "type": "section-test",
+      "blocks": {
+        "image_xj4QXe": {
+          "type": "image",
+          "settings": {
+            "img_test": "shopify://shop_images/image_1.jpg"
+          }
+        },
+        "image_QedBaD": {
+          "type": "image",
+          "settings": {
+            "img_test": "shopify://shop_images/image.jpg"
+          }
+        },
+        "image_3NzhD3": {
+          "type": "image",
+          "settings": {
+            "img_test": "shopify://shop_images/image_3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_xj4QXe",
+        "image_QedBaD",
+        "image_3NzhD3"
+      ],
       "settings": {
         "title": "Hola mundo",
         "txt-align": "center",
