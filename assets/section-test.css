@@ -1,5 +1,6 @@
 .test .txt-transform-uppercase {
     text-transform: uppercase;
+    font-weight: 900;
 }
 .test .txt-transform-capitalize {
     text-transform: capitalize;
