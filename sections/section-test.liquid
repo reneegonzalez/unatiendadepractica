@@ -1,5 +1,5 @@
 <section class="test">
-    <h1 class="title" style="text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
+    <h1 class="title" style="text-transform: {{ section.settings.txt-transform }};text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
 </section>
 
 {% schema %}
@@ -51,6 +51,26 @@
                 "id": "underline",
                 "label": "Underline",
                 "default": false
+            },
+            {
+                "type": "select",
+                "id": "txt-transform",
+                "label": "Transform Text",
+                "options": [
+                    {
+                        "value": "uppercase",
+                        "label": "Uppercase"
+                    },
+                    {
+                        "value": "capitalize",
+                        "label": "Capitalize"
+                    },
+                    {
+                        "value": "lowercase",
+                        "label": "Lowercase"
+                    }
+                    
+                ]
             }
         ],
         "presets": [
