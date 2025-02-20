@@ -1,5 +1,5 @@
 <section class="test">
-    <h1 class="title" style="text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
+    <h1 class="title" style="text-decoration: {% if section.settings.underline %} underline {% else %} none {% endif %} ;text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
 </section>
 
 {% schema %}
@@ -45,6 +45,12 @@
                 "step": 1,
                 "unit": "px",
                 "default": 16
+            }, 
+            {
+                "type": "checkbox",
+                "id": "underline",
+                "label": "Underline",
+                "default": false
             }
         ],
         "presets": [
