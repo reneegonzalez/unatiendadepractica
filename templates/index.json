@@ -108,6 +108,12 @@
           "settings": {
             "img_test": "shopify://shop_images/image_3.jpg"
           }
+        },
+        "image_qjAbD8": {
+          "type": "image",
+          "settings": {
+            "img_test": "shopify://shop_images/image.jpg"
+          }
         }
       },
       "block_order": [
@@ -115,7 +121,8 @@
         "image_QedBaD",
         "image_3NzhD3",
         "image_DXxMYb",
-        "image_yiLq8L"
+        "image_yiLq8L",
+        "image_qjAbD8"
       ],
       "settings": {
         "title": "Hola mundo",
