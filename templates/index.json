@@ -48,16 +48,16 @@
         "show_text_below": false
       }
     },
-    "section_test_AMUFJM": {
-      "type": "section-test",
+    "test_collection_3gbckd": {
+      "type": "test-collection",
       "settings": {
         "featured_collection": "nueva-colleccion",
-        "title": "jsjsd"
+        "title": "Featured Collection"
       }
     }
   },
   "order": [
     "image_banner",
-    "section_test_AMUFJM"
+    "test_collection_3gbckd"
   ]
 }
