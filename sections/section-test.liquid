@@ -10,6 +10,29 @@
     {% for option in variant.options %}
         <p>{{ variant.options.soyunavariante }}: {{ option }}</p>
       {% endfor %}
+      {% if product.variants.size > 0 %}
+        <div class="product-variants">
+          {% for variant in product.variants %}
+            <div class="variant">
+              <p><strong>{{ variant.title }}</strong></p>
+              <p>Precio: {{ variant.price | money }}</p>
+              <p>SKU: {{ variant.sku }}</p>
+              {% if variant.available %}
+                <p>Disponibilidad: En stock</p>
+              {% else %}
+                <p>Disponibilidad: Agotado</p>
+              {% endif %}
+              
+              {% comment %}
+                Si quieres mostrar las opciones de variante individuales:
+              {% endcomment %}
+              {% for option in variant.options %}
+                <p>{{ variant.options.size }}: {{ option }}</p>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
     <div class="content_image_block">
         {% for block in section.blocks %}
             {% if  block.settings.img_test != blank %}
