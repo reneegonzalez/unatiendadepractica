@@ -1,50 +1,48 @@
-{% for product in collections[section.settings.nueva_colleccion].products %}
-    {%  assign image = product.featured_media.preview_image %}
-    <div class="card">
-
-      {% if image != blank %}
-        <img src="{{ image | image_url }}" alt="{{product.title}}">
+<div class="product-collection-row">
+  <h1>{{ section.settings.title }}</h1>
+  {% if collections[section.settings.featured_collection] %}
+    {% for product in collections[section.settings.featured_collection].products %}
+      {% assign image = product.featured_media.preview_image %}
+      <div class="product-card">
+        {% if image != blank %}
+          <img src="{{ image | image_url: width: 400 }}" alt="{{ product.title | escape }}">
         {% else %}
-          {{ 'product-1' |  placeholder_svg_tag: 'card-img-top' }}
-      {% endif %}
-      <div class="card-body">
-        <h3><a class="title" href="{{product.url}}">{{product.title}}</a></h3>
-        <p>Price: {{product.price |  money_without_trailing_zeros}}</p>
-      </div>
-    </div>
-  {% endfor %}
-<div class="content_image_block">
-    {% for block in section.blocks %}
-        {% if  block.settings.img_test != blank %}
-            <img src="{{ block.settings.img_test | image_url }}" alt="img" class="img-test">
+          {{ 'product-1' | placeholder_svg_tag: 'product-card-image' }}
         {% endif %}
+        <div class="product-card-body">
+          <h3><a class="product-title-link" href="{{ product.url | escape }}">{{ product.title | escape }}</a></h3>
+          <p class="product-price">Price: {{ product.price | money }}</p>
+        </div>
+      </div>
     {% endfor %}
+  {% else %}
+    <p>Collection not found.</p>
+  {% endif %}
 </div>
 
+
 {% schema %}
+{
+  "name": "Featured Collections",
+  "class": "featured-collections-section",
+  "tag": "section",
+  "settings": [
     {
-      "name": "Featured Collections",
-      "class": "featured-collections-section",
-      "tag": "section",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "featured_collection",
-          "label": "Select a Collection"
-        },
-    
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Featured Collection"
-        }
-        
-        ],
-        "presets": [
-          {
-            "name": "Featured Collection v3"
-          }
-        ]
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Select a Collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured Collection"
     }
-    {% endschema %}
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection v"
+    }
+  ]
+}
+{% endschema %}
