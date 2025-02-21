@@ -1267,3 +1267,33 @@ class BulkAdd extends HTMLElement {
 if (!customElements.get('bulk-add')) {
   customElements.define('bulk-add', BulkAdd);
 }
+
+
+const data = [
+  {
+    title : "hola",
+    parragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
+    imgen : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsES3MX_iG4aFL0Jm_eAyrGQTMkm-bxNHgA&s"
+  },
+  {
+    title : "hola hola",
+    parragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
+    imgen : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREkHd2v-aSNrNK37q95Oa-yS9ZUO0vxyMy6A&s"
+  },
+  {
+    title : "hola hola hola",
+    parragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
+    imgen : "https://estaticos.elcolombiano.com/binrepository/640x685/0c60/640d565/none/11101/XVTB/93811301-639454733277832-2207946043375069036-n_42404596_20230518142407.jpg"
+  }
+]
+
+function testData (title, parragraf, image){
+  const divContainer = document.querySelector('.test-for-data');
+  let title = document.createElement('h1');
+  let parragraf = document.createElement('p');
+  let img = document.createElement('img');
+  img.src = data.img;
+  let contnt = document.createElement('div');
+  contnt.appendChild(title, parragraf, img);
+  console.log(contnt)
+}

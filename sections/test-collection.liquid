@@ -2,7 +2,7 @@
     <h1>{{ section.settings.title }}</h1>
     {% if collections[section.settings.featured_collection] %}
         {% for product in collections[section.settings.featured_collection].products %}
-            {% assign image = product.featured_media.preview_image %}
+          {% assign image = product.featured_media.preview_image %}
             <div class="product-card">
             <h2>{{ product.metafields.custom.nuevavariante }}</h2>
         {% if image != blank %}
