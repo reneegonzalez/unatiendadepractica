@@ -85,6 +85,8 @@
                     <h3 class="accordion__title inline-richtext h4">
                       {{ block.settings.heading | default: block.settings.page.title | escape }}
                     </h3>
+          <h2 class="subtitle">{{ product.selected_or_first_available_variant.metafields.custom.soyunavariante }}</h2>
+
                     {{- 'icon-caret.svg' | inline_asset_content -}}
                   </summary>
                   <div
