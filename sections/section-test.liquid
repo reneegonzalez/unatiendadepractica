@@ -1,53 +1,9 @@
 {{ 'section-test.css' |  asset_url | stylesheet_tag }}
 
 <section class="test">
-    {% comment %} <h1 class="title {{ section.settings.txt-transform }} {% if section.settings.underline %} underline {% else %} none {% endif %}" style=" 
+    <h1 class="title {{ section.settings.txt-transform }} {% if section.settings.underline %} underline {% else %} none {% endif %}" style=" 
     text-align: {{ section.settings.txt-align }}; color:{{ section.settings.color }}; font-size: {{ section.settings.font-size }}px">{{ section.settings.title }}</h1>
-    <h2 class="subtitle">{{ product.selected_or_first_available_variant.metafields.custom.soyunavariante }}</h2>
-    {% for variant in product.variants %}
-        <div>{{ variant.title }}</div>
-    {% endfor %}
-    {% for option in variant.options %}
-        <p>{{ variant.options.soyunavariante }}: {{ option }}</p>
-      {% endfor %}
-      {% if product.variants.size > 0 %}
-        <div class="product-variants">
-          {% for variant in product.variants %}
-            <div class="variant">
-              <p><strong>{{ variant.title }}</strong></p>
-              <p>Precio: {{ variant.price | money }}</p>
-              <p>SKU: {{ variant.sku }}</p>
-              {% if variant.available %}
-                <p>Disponibilidad: En stock</p>
-              {% else %}
-                <p>Disponibilidad: Agotado</p>
-              {% endif %} {% endcomment %}
-              
-              {% comment %}
-                Si quieres mostrar las opciones de variante individuales:
-              {% endcomment %}
-              {% comment %} {% for option in variant.options %}
-                <p>{{ variant.options.size }}: {{ option }}</p>
-              {% endfor %}
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %} {% endcomment %}
-      {% for product in collections[section.settings.nueva_colleccion].products %}
-        {%  assign image = product.featured_media.preview_image %}
-        <div class="card">
-  
-          {% if image != blank %}
-            <img src="{{ image | image_url }}" alt="{{product.title}}">
-            {% else %}
-              {{ 'product-1' |  placeholder_svg_tag: 'card-img-top' }}
-          {% endif %}
-          <div class="card-body">
-            <h3><a class="title" href="{{product.url}}">{{product.title}}</a></h3>
-            <p>Price: {{product.price |  money_without_trailing_zeros}}</p>
-          </div>
-        </div>
-      {% endfor %}
+    
     <div class="content_image_block">
         {% for block in section.blocks %}
             {% if  block.settings.img_test != blank %}
@@ -55,32 +11,98 @@
             {% endif %}
         {% endfor %}
     </div>
-</section>
+    </section>
 
 {% schema %}
-    {
-      "name": "Nueva Collecion",
-      "class": "featured-collections-section",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "featured_collection",
-          "label": "Select a Collection"
-        },
-    
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Featured Collection"
-        }
-        
+{
+    "name": "Test",
+    "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default":"Title Here"
+            },
+            {
+                "type": "select",
+                "id": "txt-align",
+                "label": "Align Text",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "color",
+                "label": "Color Text",
+                "default": "#000000"
+            },
+            {
+                "type": "range",
+                "id": "font-size",
+                "label": "Size Text",
+                "min": 15,
+                "max": 50,
+                "step": 1,
+                "unit": "px",
+                "default": 16
+            }, 
+            {
+                "type": "checkbox",
+                "id": "underline",
+                "label": "Underline",
+                "default": false
+            },
+            {
+                "type": "select",
+                "id": "txt-transform",
+                "label": "Transform Text",
+                "options": [
+                    {
+                        "value": "txt-transform-uppercase",
+                        "label": "Uppercase"
+                    },
+                    {
+                        "value": "txt-transform-capitalize",
+                        "label": "Capitalize"
+                    },
+                    {
+                        "value": "txt-transform-lowercase",
+                        "label": "Lowercase"
+                    }
+                    
+                ]
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Images",
+                "type": "image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "img_test",
+                        "label": "Image"
+            
+                    }
+                ]
+            }
         ],
         "presets": [
-          {
-            "name": "Featured Collection Custom",
-            "category": " Collection"
-          }
+            {
+                "name": "Test"
+            }
         ]
-    }
-    {% endschema %}
+}
+{% endschema %}
