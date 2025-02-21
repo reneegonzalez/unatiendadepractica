@@ -1294,6 +1294,8 @@ function testData (title, parragraf, image){
   let img = document.createElement('img');
   img.src = data.img;
   let contnt = document.createElement('div');
-  contnt.appendChild(title, parragraf, img);
-  console.log(contnt)
+  contnt.appendChild(title);
+  contnt.appendChild(img);
+  contnt.appendChild(parragraf);
+  console.log(contnt);
 }
