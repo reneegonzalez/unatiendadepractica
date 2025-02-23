@@ -5,6 +5,7 @@
           {% assign image = product.featured_media.preview_image %}
             <div class="product-card">
             <h2>{{ product.metafields.custom.nuevavariante }}</h2>
+            <p>{{ product.metafields.custom.segundometafield }}</p>
         {% if image != blank %}
           <img src="{{ image | image_url: width: 400 }}" alt="{{ product.title | escape }}">
         {% else %}
