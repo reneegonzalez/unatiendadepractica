@@ -54,10 +54,22 @@
         "featured_collection": "nueva-colleccion",
         "title": "Featured Collection"
       }
+    },
+    "section_test_adFWYY": {
+      "type": "section-test",
+      "settings": {
+        "title": "Title Here",
+        "txt-align": "left",
+        "color": "#000000",
+        "font-size": 16,
+        "underline": false,
+        "txt-transform": "txt-transform-uppercase"
+      }
     }
   },
   "order": [
     "image_banner",
-    "test_collection_3gbckd"
+    "test_collection_3gbckd",
+    "section_test_adFWYY"
   ]
 }
