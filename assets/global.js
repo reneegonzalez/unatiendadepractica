@@ -1271,31 +1271,37 @@ if (!customElements.get('bulk-add')) {
 
 const data = [
   {
-    title : "hola",
-    parragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
-    imgen : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsES3MX_iG4aFL0Jm_eAyrGQTMkm-bxNHgA&s"
+    mytitle : "hola",
+    myparragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
+    myimgen : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsES3MX_iG4aFL0Jm_eAyrGQTMkm-bxNHgA&s"
   },
   {
-    title : "hola hola",
-    parragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
-    imgen : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREkHd2v-aSNrNK37q95Oa-yS9ZUO0vxyMy6A&s"
+    mytitle : "hola hola",
+    myparragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
+    myimgen : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREkHd2v-aSNrNK37q95Oa-yS9ZUO0vxyMy6A&s"
   },
   {
-    title : "hola hola hola",
-    parragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
-    imgen : "https://estaticos.elcolombiano.com/binrepository/640x685/0c60/640d565/none/11101/XVTB/93811301-639454733277832-2207946043375069036-n_42404596_20230518142407.jpg"
+    mytitle : "hola hola hola",
+    myparragraf : "lorem lorem lorem lorem lorem lorem v lorem v v v lorem lorem lorem lorem lorem",
+    myimgen : "https://estaticos.elcolombiano.com/binrepository/640x685/0c60/640d565/none/11101/XVTB/93811301-639454733277832-2207946043375069036-n_42404596_20230518142407.jpg"
   }
 ]
-
+let newContent = document.querySelector('.content_image_block');
 function testData (title, parragraf, image){
   const divContainer = document.querySelector('.test-for-data');
-  let title = document.createElement('h1');
-  let parragraf = document.createElement('p');
-  let img = document.createElement('img');
-  img.src = data.img;
+  let oneTitle = document.createElement('h1');
+  oneTitle.textContent = title;
+  let oneParragraf = document.createElement('p');
+  oneParragraf.textContent = parragraf;
+  let oneImg = document.createElement('img');
+  oneImg.src = image;
   let contnt = document.createElement('div');
   contnt.appendChild(title);
   contnt.appendChild(img);
   contnt.appendChild(parragraf);
-  console.log(contnt);
+  newContent.appendChild(contnt);
 }
+
+data.forEach((e)=>{
+  testData(e.mytitle, e.myparragraf, e.myimgen);
+})
