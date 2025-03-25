@@ -21,8 +21,9 @@
     <p>Collection not found.</p>
   {% endif %}
 </div>
+
 {% for item in cart.items %}
-  <h2>{{ item.title }}</h2>
+  <h2>{{ item.title }} dsadasdasd</h2>
 
   {% unless item.properties == empty %}
     {% for property in item.properties %}
@@ -36,7 +37,6 @@
     {% endfor %}
   {% endunless %}
 {% endfor %}
-
 {% schema %}
 {
   "name": "Featured Collections",
