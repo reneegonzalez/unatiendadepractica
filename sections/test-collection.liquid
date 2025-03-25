@@ -21,7 +21,21 @@
     <p>Collection not found.</p>
   {% endif %}
 </div>
-{%  form 'cart' %}  holaaa {% endform %}
+{% for item in cart.items %}
+  <h2>{{ item.title }}</h2>
+
+  {% unless item.properties == empty %}
+    {% for property in item.properties %}
+      {{ property.first }}:
+
+      {% if property.last contains '/uploads/' %}
+        <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+      {% else %}
+        {{ property.last }}
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
+{% endfor %}
 
 {% schema %}
 {
