@@ -1,6 +1,6 @@
-<h1>hola mundo</h1>
-<p>Número de productos en la colección: {{ collection.products.size }}</p>
+<h1>Hola mundo</h1>
 {% for product in collection.products %}
+  <pre>{{ product.metafields | json }}</pre>
   {% if product.metafields.details.price_per_100g.value %}
     <p>El precio por 100g de {{ product.title }} es: {{ product.metafields.details.price_per_100g.value }} centavos.</p>
   {% else %}
