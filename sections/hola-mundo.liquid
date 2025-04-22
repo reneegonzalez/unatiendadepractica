@@ -1,3 +1,9 @@
 <h1>hola mundo</h1>
 
-<h1>{{ product.metafields.details.price_per_100g.value }}</h1>
+{% for product in collection.products %}
+  {% if product.metafields.details.price_per_100g.value %}
+    <p>El precio por 100g de {{ product.title }} es: {{ product.metafields.details.price_per_100g.value }} centavos.</p>
+  {% else %}
+    <p>El producto {{ product.title }} no tiene información de precio por 100g.</p>
+  {% endif %}
+{% endfor %}
